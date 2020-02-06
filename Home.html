@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Scott's To-do List</title>
-<h1>Scott's To-do List</h1>
+    <title>Scott's To-do List</title>
+    <link href="style.css" rel="stylesheet" />
+    <h2>Scott's To-do List</h2>
 </head>
 <body>
 
-<p>Add a task</p>
+    <p>Add a task</p>
+    <button id="btn-add">+</button>
+
+    <!-- The Modal -->
+    <div id="addTask" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add a new task</h3>
+            <form>
+                <label>Task </label>
+                <input placeholder="" type="text" required /> <br> <br>
+                <input class="formBtn" type="submit" />
+            </form>
+            
+        </div>
+
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
