@@ -1,10 +1,10 @@
 // Startup
 window.onload = function() {
   if (localStorage.getItem("ListOfTasks") !== null) {
-    let arrStatus = localStorage.getItem("CompletionStatus").split("|");
+    let arrCompletionStatus = localStorage.getItem("CompletionStatus").split("|");
     let arrTaskList = getArrayOfTasks();
     arrTaskList.forEach((e, i) => {
-      addTaskToTable(e, i, arrStatus);
+      addTaskToTable(e, i, arrCompletionStatus);
     });
   }
   
@@ -57,16 +57,18 @@ function addTaskToTable(item, index, arrCompletionStatus) {
     let cell0 = newRow.insertCell(0);
     let cell1 = newRow.insertCell(1);
 
+    let isTaskComplete = (arrCompletionStatus[index] == 'status-complete') ? true : false;
+    let cbxTitle = (arrCompletionStatus[index] == 'status-complete') ? 'Mark as incomplete' : 'Mark as complete';
+
     let cbx = document.createElement("INPUT");
     cbx.setAttribute('id', 'cbx-' + index.toString());
     cbx.setAttribute('class', arrCompletionStatus[index]);
     cbx.setAttribute('onclick', 'changeTaskStatus(this)');
     cbx.setAttribute('type', 'checkbox');
-    cbx.setAttribute('title', 'Mark as complete');
-
+    cbx.setAttribute('title', cbxTitle);
     cell0.append(cbx);
-    let isTaskComplete = arrCompletionStatus[index] = 'status-complete' ? true : false;
-    console.log(arrCompletionStatus[index]);
+    
+    
     document.getElementById('cbx-' + index.toString()).checked = isTaskComplete;
 
     cell1.setAttribute('id', 'task-' + index.toString());
