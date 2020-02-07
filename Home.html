@@ -3,11 +3,11 @@
 <head>
     <title>Scott's To-do List</title>
     <link href="style.css" rel="stylesheet" />
-    <h2 id="myHeader">Scott's To-do List</h2>
+    <h2 id="myHeader">Your To-do List</h2>
 </head>
 <body>
 
-    <button id="btn-show-modal" class="button">+</button>
+    <button id="btn-show-modal" class="button" title='Add a new task'>+</button>
     <hr>
 
     <p id="no-tasks"></p>
@@ -18,36 +18,31 @@
             <thead style="font-size: 24px;">
                 <tr>
                     <th></th>
-                    <th>Task</th>
+                    <th></th>
                     <th></th>
                 </tr>
             </thead style="font-size: 24px;">
             <tbody style="font-size: 20px;">
-                <tr>
-                    <td><button class="btn-complete"></button></td>
-                    <td>Sweep the floor</td>
-                    <td></td>
-                </tr>
+            
             </tbody style="font-size: 20px;">
-            <tfoot>
-                <tr><td> </td></tr>
-                <tr><td>Edit</td></tr>
-            </tfoot>
         </table>
     </div>
-    
+
+    <div>
+        <button id="clear">Clear</button>
+    </div>
 
     <!-- The Modal -->
     <div id="form-add-task" class="modal">
 
-        <!-- Modal content -->
+        <!-- Modal Content -->
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Add a new task</h3>
             <form>
-                <label>Task </label>
-                <input placeholder="" type="text" required /> <br> <br>
-                <button id="btn-add" class="form-btn">Add</button>
+                <label for="task">Task </label>
+                <input id="textbox-task" type="text" required /> <br> <br>
+                <button id="btn-add" class="form-btn" onClick="addNewTask();">Add</button>
             </form>
         </div>
 

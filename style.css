@@ -37,14 +37,22 @@
   }
 
   .table {
-    display: table; /* Hidden by default */
+    display: table;
   }
 
-  .btn-complete {
+  .cbx-complete {
     background-color: #fefefe;
     padding: 8px;
     border-radius: 100%;
     border: 2px solid black;
     align-self: center;
     margin: 5px 20px;   
+  }
+
+  .status-complete {
+    text-decoration: line-through;
+  }
+
+  .status-incomplete {
+    text-decoration: none;
   }
