@@ -56,3 +56,11 @@
   .status-incomplete {
     text-decoration: none;
   }
+
+  .btn-status-complete {
+    display: block;
+  }
+
+  .btn-status-incomplete {
+    display: none;
+  }
